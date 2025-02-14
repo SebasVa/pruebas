@@ -24,7 +24,7 @@ const swaggerOptions = {
       },
     }
   },
-  apis: ["./src/Infrastructure/routes/*.ts"], // Automáticamente documenta las rutas
+  apis: ["./src/Infrastructure/routes/*.ts", "./Infrastructure/routes/*.js"], // Automáticamente documenta las rutas
 };
 
 export default swaggerOptions;
