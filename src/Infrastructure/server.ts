@@ -4,13 +4,17 @@ import path from "path";
 import swaggerJsdoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 import swaggerOptions from "../swagger";
+import dotenv from "dotenv";
+
+// Cargar variables de entorno
+dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 // Middleware para manejar solicitudes grandes (aumentando el límite)
-app.use(express.json({ limit: '50mb' })); // Ajusta el límite según el tamaño de tu archivo
-app.use(express.urlencoded({ limit: '50mb', extended: true }));
+app.use(express.json({ limit: process.env.JSON_LIMIT}));
+app.use(express.urlencoded({ limit: process.env.URLENCODED_LIMIT, extended: true }));
 
 // Swagger setup
 const swaggerSpec = swaggerJsdoc(swaggerOptions);

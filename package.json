@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "compress-pdf": "^0.5.1",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "html-pdf": "^3.0.1",
     "jsonwebtoken": "^9.0.2",

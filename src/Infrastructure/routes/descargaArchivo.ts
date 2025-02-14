@@ -10,7 +10,7 @@ const router = Router();
  *   get:
  *     tags:
  *       - Procesar archivos
- *     summary: Descarga o consulta un archivo en diferentes formatos
+ *     summary: Descarga un archivo en diferentes formatos
  *     description: Este endpoint permite descargar un archivo en formato binario o obtener su contenido codificado en base64.
  *     security:
  *       - bearerAuth: []
