@@ -1,22 +1,25 @@
 import path from "path";
+import dotenv from "dotenv";
+
+dotenv.config(); // Cargar variables de entorno
 
 const FLUJO_PATHS: Record<string, string> = {
-  normal: "C:\\adss_creacion_cert\\dist\\data\\ra\\",
-  credifin: "C:\\adss_credifin\\dist\\data\\ra\\",
-  issfa: "C:\\adss_issfa\\dist\\data\\ra\\",
-  fiducia: "C:\\adss_fiducia\\dist\\data\\ra\\",
-  san_francisco: "C:\\adss_san_francisco\\dist\\data\\ra\\",
-  generic: "C:\\adss_generic\\dist\\data\\ra\\",
-  mi_negocio: "C:\\adss_mi_negocio\\dist\\data\\ra\\",
-  puntonet: "C:\\adss_punto_net\\dist\\data\\ra\\",
-  pruebas: "C:\\adss_pruebas\\dist\\data\\ra\\",
-  massend: "C:\\adss_massend\\dist\\data\\ra\\",
-  alianza: "C:\\adss_alianza\\dist\\data\\ra\\",
-  issfa_supervivencia: "C:\\adss_issfa_supervivencia\\dist\\data\\ra\\",
-  firmador_v: "C:\\adss_firmador_v\\dist\\data\\ra\\",
-  atlantida: "C:\\adss_atlantida\\dist\\data\\ra\\",
-  firmador: "C:\\adss_firmador\\dist\\data\\ra\\",
-  pre_equifax: "C:\\adss_equifax\\dist\\data\\ra\\",
+  normal: process.env.FLUJO_NORMAL || "",
+  credifin: process.env.FLUJO_CREDIFIN || "",
+  issfa: process.env.FLUJO_ISSFA || "",
+  fiducia: process.env.FLUJO_FIDUCIA || "",
+  san_francisco: process.env.FLUJO_SAN_FRANCISCO || "",
+  generic: process.env.FLUJO_GENERIC || "",
+  mi_negocio: process.env.FLUJO_MI_NEGOCIO || "",
+  puntonet: process.env.FLUJO_PUNTONET || "",
+  pruebas: process.env.FLUJO_PRUEBAS || "",
+  massend: process.env.FLUJO_MASSEND || "",
+  alianza: process.env.FLUJO_ALIANZA || "",
+  issfa_supervivencia: process.env.FLUJO_ISSFA_SUPERVIVENCIA || "",
+  firmador_v: process.env.FLUJO_FIRMADOR_V || "",
+  atlantida: process.env.FLUJO_ATLANTIDA || "",
+  firmador: process.env.FLUJO_FIRMADOR || "",
+  pre_equifax: process.env.FLUJO_PRE_EQUIFAX || "",
 };
 
 export function direccion(flujo: string, filename: string): string | undefined {

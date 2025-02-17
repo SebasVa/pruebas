@@ -1,4 +1,7 @@
 import swaggerJSDoc from "swagger-jsdoc";
+import dotenv from "dotenv";
+
+dotenv.config(); // Carga las variables del archivo .env
 
 const swaggerOptions = {
   definition: {
@@ -10,7 +13,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: "http://localhost:3000/api",
+        url: process.env.SWAGGER_SERVER_URL,
         description: "Servidor local",
       },
     ],
