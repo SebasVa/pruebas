@@ -53,12 +53,12 @@ export const crearPDFPJ = async (req: Request, res: Response): Promise<void> => 
 
         pdf.create(fichaHtml).toFile(fichaPath, (error, result) => {
             if (error) {
-                console.error("Error creando PDF de Ficha PJ:", error);
+                // console.error("Error creando PDF de Ficha PJ:", error);
                 res.status(500).json({ status: "error", message: "Error creando el PDF de Ficha PJ" });
                 return;
             }
 
-            console.log("PDF de Ficha PJ creado:", result.filename);
+            // console.log("PDF de Ficha PJ creado:", result.filename);
 
             // Crear Contrato
             const contratoTemplatePath = require.resolve(plantillas.contrato);
@@ -74,7 +74,7 @@ export const crearPDFPJ = async (req: Request, res: Response): Promise<void> => 
                     return;
                 }
 
-                console.log("PDF de Contrato PJ creado:", result.filename);
+                // console.log("PDF de Contrato PJ creado:", result.filename);
                 res.status(200).json({
                     status: "success",
                     message: "PDFs creados correctamente"
@@ -82,7 +82,7 @@ export const crearPDFPJ = async (req: Request, res: Response): Promise<void> => 
             });
         });
     } catch (error) {
-        console.error("Error en crearPDFPJ:", error);
+        // console.error("Error en crearPDFPJ:", error);
         res.status(500).json({ status: "error", message: "Error creando los PDFs" });
     }
 };

@@ -66,7 +66,7 @@ export const crearPDFFLUJO = async (req: Request, res: Response): Promise<void> 
     await new Promise((resolve, reject) => {
       pdf.create(contenidoHtml).toFile(pdfPath, (error, result) => {
         if (error) {
-          console.error("Error creando el primer PDF:", error);
+          // console.error("Error creando el primer PDF:", error);
           reject(error);
         } else resolve(result);
       });
@@ -75,7 +75,7 @@ export const crearPDFFLUJO = async (req: Request, res: Response): Promise<void> 
     await new Promise((resolve, reject) => {
       pdf.create(contenidoHtml1).toFile(pdfPath1, (error, result) => {
         if (error) {
-          console.error("Error creando el segundo PDF:", error);
+          // console.error("Error creando el segundo PDF:", error);
           reject(error);
         } else resolve(result);
       });
@@ -83,7 +83,7 @@ export const crearPDFFLUJO = async (req: Request, res: Response): Promise<void> 
 
     res.status(200).json({ status: "success", message: "PDFs creados correctamente" });
   } catch (error) {
-    console.error("Error en crearPDFFLUJO:", error);
+    // console.error("Error en crearPDFFLUJO:", error);
     res.status(500).json({ status: "error", message: "Error creando el PDF" });
   }
 };

@@ -69,7 +69,7 @@ export const crearPDFFAC = async (req: Request, res: Response): Promise<void> =>
     await new Promise((resolve, reject) => {
       pdf.create(contenidoHtml).toFile(pdfPathFicha, (error, result) => {
         if (error) {
-          console.error("Error creando el PDF de ficha:", error);
+          // console.error("Error creando el PDF de ficha:", error);
           reject(error);
         } else resolve(result);
       });
@@ -78,7 +78,7 @@ export const crearPDFFAC = async (req: Request, res: Response): Promise<void> =>
     await new Promise((resolve, reject) => {
       pdf.create(contenidoHtml1).toFile(pdfPathContrato, (error, result) => {
         if (error) {
-          console.error("Error creando el PDF de contrato:", error);
+          // console.error("Error creando el PDF de contrato:", error);
           reject(error);
         } else resolve(result);
       });
@@ -86,7 +86,7 @@ export const crearPDFFAC = async (req: Request, res: Response): Promise<void> =>
 
     res.status(200).json({ status: "success", message: "PDFs creados correctamente" });
   } catch (error) {
-    console.error("Error en crearPDFFAC:", error);
+    // console.error("Error en crearPDFFAC:", error);
     res.status(500).json({ status: "error", message: "Error creando los PDFs" });
   }
 };
